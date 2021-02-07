@@ -30,6 +30,10 @@ category_dir: /categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - LaTeX-syntax.html
+  - baidu_verify_code-LkUYqrqyR7.html
+  - baidu_verify_code-FeIJmo3kx9.html
+
 
 # Writing
 new_post_name: :title.md # File name of new posts
