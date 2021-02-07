@@ -621,7 +621,7 @@ comments:
 # For more information: https://disqus.com
 disqus:
   enable: false
-  shortname: shuyumoblog
+  shortname:
   count: true
 
 # DisqusJS
@@ -634,7 +634,7 @@ disqusjs:
   # api: https://disqus.skk.moe/disqus/
   api:
   apikey:
-  shortname: shuyumoblog # See: https://disqus.com/admin/settings/general/
+  shortname:  # See: https://disqus.com/admin/settings/general/
 
 # Changyan
 # For more information: https://changyan.kuaizhan.com
@@ -667,7 +667,7 @@ gitalk:
 # For more information: https://utteranc.es
 utterances:
   enable: false
-  repo: ShuYuMo2003/ShuYuMo2003.github.io # Github repository name
+  repo:  # Github repository name
   # Available values: pathname | url | title | og:title
   issue_term: title
   # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
@@ -723,11 +723,11 @@ cloudflare_analytics:
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   app_id: Tw3wqSuCQwL4zK5pGCd6BkKa-gzGzoHsz
   app_key: lwlhdaYvNPPDLhBEGeUegbH6
   # Required for apps from CN region
-  server_url: https://shuyumo2003.github.io/ # <your server url>
+  server_url: # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
@@ -864,7 +864,7 @@ motion:
 # Progress bar in the top during page loading.
 # For more information: https://github.com/rstacruz/nprogress
 nprogress:
-  enable: false
+  enable: true
   spinner: true
 
 # Canvas ribbon
