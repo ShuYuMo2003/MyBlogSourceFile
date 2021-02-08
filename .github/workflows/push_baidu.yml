@@ -1,0 +1,62 @@
+name: Baidu push
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '0 2,10,15,23 * * *'
+
+jobs:
+  baidu-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Push Gitee Link to Baidu.
+        run: |
+          python <<END
+          import requests
+          import re
+          filecontent = requests.get('https://shuyumo2003.github.io/sitemap.xml').text
+          pattern = re.compile(r'(?<=<loc>).+?(?=</loc>)')
+          result = pattern.findall(filecontent)
+          data = []
+          for i in result:
+            temp = ''
+            if(i[0] != '/'): temp = '/'
+            if(i == 'http://shuyumo2003.github.io/'):
+              data.append('https://shuyumo2003.gitee.io/')
+            else:
+              data.append('https://shuyumo2003.gitee.io' + temp + i)
+          data.append('https://shuyumo2003.gitee.io/')
+          req = requests.post('http://data.zz.baidu.com/urls?site=https://shuyumo2003.gitee.io&token=${{ secrets.BAIDU_PUSH }}', '\n'.join(data))
+          print('\n'.join(data))
+          print(req.text)
+          END
+      - name: Push Github Link to Baidu.
+        run: |
+          python <<END
+          import requests
+          import re
+          filecontent = requests.get('https://shuyumo2003.github.io/sitemap.xml').text
+          pattern = re.compile(r'(?<=<loc>).+?(?=</loc>)')
+          result = pattern.findall(filecontent)
+          data = []
+          for i in result:
+            temp = ''
+            if(i[0] != '/'): temp = '/'
+            if(i == 'http://shuyumo2003.github.io/'):
+              data.append('https://shuyumo2003.github.io/')
+            else:
+              data.append('https://shuyumo2003.github.io' + temp + i)
+          data.append('https://shuyumo2003.github.io/')
+          req = requests.post('http://data.zz.baidu.com/urls?site=https://shuyumo2003.github.io&token=${{ secrets.BAIDU_PUSH }}', '\n'.join(data))
+          print('\n'.join(data))
+          print(req.text)
+          END
