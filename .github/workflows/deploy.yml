@@ -17,11 +17,13 @@ jobs:
         INPUT_DEPLOYKEY: ${{ secrets.INPUT_DEPLOYKEY }}
         BAIDU_PUSH: ${{ secrets.BAIDU_PUSH }}
 
-    - name: let gitee repo sync with current repo.
-      uses: acefei/sync-repo-action@master
+    - name: Sync to Gitee
+      uses: wearerequired/git-mirror-action@master
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.INPUT_DEPLOYKEY }}
       with:
-        ssh_private_key: ${{ secrets.INPUT_DEPLOYKEY }}
-        target_repo: git@gitee.com:ShuYuMo2003/ShuYuMo2003.git
+        source-repo: git@github.com:ShuYuMo2003/ShuYuMo2003.github.io.git
+        destination-repo: git@gitee.com:ShuYuMo2003/ShuYuMo2003.git
 
     - name: update gitee page service.
       uses: yanglbme/gitee-pages-action@608fe766b5f34094dafd551d22b35003ee2b77b2
