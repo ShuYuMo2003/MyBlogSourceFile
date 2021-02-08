@@ -8,5 +8,5 @@ jobs:
       uses: actions/checkout@master
 
     - name: Test Clienting to gitee.
-    - run: |
+      run: |
         git clone git@gitee.com:ShuYuMo2003/ShuYuMo2003.git
