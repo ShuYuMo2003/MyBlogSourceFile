@@ -21,7 +21,7 @@ jobs:
       uses: acefei/sync-repo-action@master
       with:
         ssh_private_key: ${{ secrets.INPUT_DEPLOYKEY }}
-        target_repo: ShuYuMo2003/ShuYuMo2003
+        target_repo: git@gitee.com:ShuYuMo2003/ShuYuMo2003.git
 
     - name: update gitee page service.
       uses: yanglbme/gitee-pages-action@608fe766b5f34094dafd551d22b35003ee2b77b2
