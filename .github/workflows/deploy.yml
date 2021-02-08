@@ -26,7 +26,7 @@ jobs:
     - uses: acefei/sync-repo-action@master
       with:
         ssh_private_key: ${{ secrets.INPUT_DEPLOYKEY }}
-        target_repo: gitee
+        target_repo: ShuYuMo2003/ShuYuMo2003
 
     - uses: yanglbme/gitee-pages-action@608fe766b5f34094dafd551d22b35003ee2b77b2
       with:
