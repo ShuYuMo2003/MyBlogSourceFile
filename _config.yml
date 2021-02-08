@@ -117,10 +117,3 @@ search:
   field: post
   content: true
   format: html
-
-leancloud_counter_security:
-  enable_sync: true
-  app_id: Tw3wqSuCQwL4zK5pGCd6BkKa-gzGzoHsz
-  app_key: lwlhdaYvNPPDLhBEGeUegbH6
-  username: ShuYuMo # Will be asked while deploying if is left blank
-  password: # Recommmended to be left blank. Will be asked while deploying if is left blank

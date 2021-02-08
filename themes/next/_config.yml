@@ -85,7 +85,7 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
+  LaTeX-syntax: /LaTeX-syntax.html || fa fa-heart
   # sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
@@ -313,7 +313,7 @@ post_navigation: left
 # TagCloud settings for tags page.
 tagcloud:
   min: 12 # Minimun font size in px
-  max: 30 # Maxium font size in px
+  max: 25 # Maxium font size in px
   amount: 200 # Total amount of tags
   orderby: name # Order of tags
   order: 1 # Sort order
@@ -725,8 +725,8 @@ cloudflare_analytics:
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: Tw3wqSuCQwL4zK5pGCd6BkKa-gzGzoHsz
-  app_key: lwlhdaYvNPPDLhBEGeUegbH6
+  app_id:
+  app_key:
   # Required for apps from CN region
   server_url: # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
