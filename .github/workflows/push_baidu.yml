@@ -30,7 +30,7 @@ jobs:
           for i in result:
             temp = ''
             if(i[0] != '/'): temp = '/'
-            if(i == 'http://shuyumo2003.github.io/'):
+            if(i == 'https://shuyumo2003.github.io/'):
               data.append('https://shuyumo2003.gitee.io/')
             else:
               data.append('https://shuyumo2003.gitee.io' + temp + i)
@@ -51,7 +51,7 @@ jobs:
           for i in result:
             temp = ''
             if(i[0] != '/'): temp = '/'
-            if(i == 'http://shuyumo2003.github.io/'):
+            if(i == 'https://shuyumo2003.github.io/'):
               data.append('https://shuyumo2003.github.io/')
             else:
               data.append('https://shuyumo2003.github.io' + temp + i)
