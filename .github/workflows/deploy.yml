@@ -16,8 +16,20 @@ jobs:
         PUBLISH_DIR: ./public # The folder the action should deploy.
         INPUT_DEPLOYKEY: ${{ secrets.INPUT_DEPLOYKEY }}
         BAIDU_PUSH: ${{ secrets.BAIDU_PUSH }}
-    - name: Rebuild on Gitee
-      uses: yanglbme/gitee-pages-action@608fe766b5f34094dafd551d22b35003ee2b77b2
+  fuck-gitee:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - uses: acefei/sync-repo-action@master
+      with:
+        ssh_private_key: ${{ secrets.INPUT_DEPLOYKEY }}
+        target_repo: gitee
+        - name: Rebuild on Gitee
+
+    - uses: yanglbme/gitee-pages-action@608fe766b5f34094dafd551d22b35003ee2b77b2
       with:
         gitee-username: ShuYuMo2003
         gitee-password: ${{ secrets.GITEE_PASSWORD }}
