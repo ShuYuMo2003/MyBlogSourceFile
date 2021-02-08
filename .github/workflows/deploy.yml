@@ -16,6 +16,8 @@ jobs:
         PUBLISH_DIR: ./public # The folder the action should deploy.
         INPUT_DEPLOYKEY: ${{ secrets.INPUT_DEPLOYKEY }}
         BAIDU_PUSH: ${{ secrets.BAIDU_PUSH }}
+        GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
+        GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
 
     - name: Sync to Gitee
       uses: wearerequired/git-mirror-action@master

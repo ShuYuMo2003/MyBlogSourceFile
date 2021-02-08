@@ -655,8 +655,8 @@ gitalk:
   enable: true
   github_id: ShuYuMo2003 # GitHub repo owner
   repo: ShuYuMo2003.github.io # Repository name to store issues
-  client_id: 5d4b0a361ccf7199b58f # GitHub Application Client ID
-  client_secret: ff21340eedfb4a1c940eaddf8e180f0260c33088 # GitHub Application Client Secret
+  client_id: {{GITALK_CLIENT_ID}} # saved in `secret`
+  client_secret: {{GITALK_CLIENT_SECRET}} # saved in `secret`
   admin_user: ShuYuMo2003 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
