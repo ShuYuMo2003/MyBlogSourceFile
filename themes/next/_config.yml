@@ -724,7 +724,7 @@ cloudflare_analytics:
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: Tw3wqSuCQwL4zK5pGCd6BkKa-gzGzoHsz
   app_key: lwlhdaYvNPPDLhBEGeUegbH6
   # Required for apps from CN region
@@ -746,7 +746,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
