@@ -5,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '0 2,10,15,23 * * *'
-# test push baidu.
+    - cron:  '0 2,5,10,15,23 * * *'
+
 jobs:
   baidu-push:
     runs-on: ubuntu-latest
