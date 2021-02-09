@@ -944,8 +944,8 @@ vendors:
   disqusjs_css:
 
   # Gitalk
-  gitalk_js:
-  gitalk_css:
+  gitalk_js: https://cdn.jsdelivr.net/gh/ShuYuMo2003/gitalk@master/dist/gitalk.min.js
+  gitalk_css: https://cdn.jsdelivr.net/gh/ShuYuMo2003/gitalk@master/dist/gitalk.css
 
   # Firebase
   firebase_app:
