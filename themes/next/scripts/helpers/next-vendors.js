@@ -11,6 +11,9 @@ hexo.extend.helper.register('js_vendors', function() {
       vendors.push('prism_line_numbers');
     }
   }
+  vendors.push('prism');
+  vendors.push('prism_line_numbers');
+  vendors.push('prism_autoloader');
   if (theme.pjax) {
     vendors.push('pjax');
   }
@@ -26,5 +29,6 @@ hexo.extend.helper.register('js_vendors', function() {
   if (theme.pangu) {
     vendors.push('pangu');
   }
+  console.log(vendors);
   return vendors;
 });
