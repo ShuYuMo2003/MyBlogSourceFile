@@ -85,7 +85,49 @@
           {{ post.content }}
         {%- endif %}
       {% else %}
-        {{ post.content }}
+        {%- if post.password  %}
+          <a id="encryption" class="btn" style="display: block; width: 82px; margin: auto; height: 29px; text-align: center; line-height: 29px; font-size: 16px; border-radius: 2px;">
+            解密
+          </a>
+          <script src="/js/crypto-js.js"></script>
+          <script>
+            var __decrypt = function(data, key) {
+              const fixkey = (key) => key.toString().substr(0, 15).padEnd(32, 'a');
+              return CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(fixkey(key)), {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+              }).toString(CryptoJS.enc.Utf8);
+            }
+            var encryption = function(pd){
+              var password;
+              if(pd) password = pd; else password = prompt('输入解密密钥：');
+              var pass;
+              try{
+                var content = (__decrypt(
+                  `{{ post.__passageContent }}`
+                , password));
+                pass = true;
+              }
+              catch(err) {
+                console.log('error!')
+                pass = false;
+              }
+              if(!pass || !content) alert('密码错误！');
+              else {
+                window.sessionStorage.setItem("__password", password);
+                return content;
+              }
+            }
+            var target = document.getElementById('encryption');
+            target.onclick = () => { var t = encryption(); if(t) location.reload(); };
+            if(window.sessionStorage.getItem('__password')){
+              var target = document.getElementsByClassName('post-body')[0];
+              target.innerHTML = encryption(window.sessionStorage.getItem('__password'));
+            }
+          </script>
+        {% else %}
+          {{ post.content }}
+        {%- endif %}
       {%- endif %}
     </div>
 
