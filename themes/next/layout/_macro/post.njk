@@ -100,7 +100,7 @@
             }
             var encryption = function(pd){
               var password;
-              if(pd) password = pd; else password = prompt('输入解密密钥：');
+              if(pd) password = pd; else password = prompt('input password：');
               var pass;
               try{
                 var content = (__decrypt(
@@ -112,17 +112,18 @@
                 console.log('error!')
                 pass = false;
               }
-              if(!pass || !content) alert('密码错误！');
+              if(!pass || !content) return ;
               else {
                 window.sessionStorage.setItem("__password", password);
                 return content;
               }
             }
             var target = document.getElementById('encryption');
-            target.onclick = () => { var t = encryption(); if(t) location.reload(); };
+            target.onclick = () => { var t = encryption(); if(!t) alert('wrong password!'); if(t) location.reload(); };
             if(window.sessionStorage.getItem('__password')){
               var target = document.getElementsByClassName('post-body')[0];
-              target.innerHTML = encryption(window.sessionStorage.getItem('__password'));
+              var content = encryption(window.sessionStorage.getItem('__password'));
+              if(content) target.innerHTML = content;
             }
           </script>
         {% else %}
